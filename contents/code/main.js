@@ -20,7 +20,8 @@ const wiredClientIds = new Set();
 
 const compat = {
 	addDesktop: () => {
-		workspace.createDesktop(workspace.desktops.length, undefined);
+		// Pass an empty string (not undefined) so Plasma uses the default "Desktop N" name.
+		workspace.createDesktop(workspace.desktops.length, "");
 	},
 
 	windowAddedSignal: ws => ws.windowAdded,
